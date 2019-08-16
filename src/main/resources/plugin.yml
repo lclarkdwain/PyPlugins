@@ -1,0 +1,6 @@
+name: PyPlugins
+main: dev.anullihate.PyPlugins
+version: "${pom.version}"
+api: ["1.0.0"]
+load: STARTUP
+author: anullihate

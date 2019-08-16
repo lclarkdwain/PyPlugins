@@ -15,6 +15,15 @@ public class PyPlugins extends PluginBase {
         return instance;
     }
 
+    public void onLoad() {
+        if (!new File("lib/jython-standalone-2.7.1.jar").exists()) {
+            getServer().getLogger().critical("Could not find lib/jython-standalone-2.7.1.jar!");
+            getServer().getPluginManager().disablePlugin(this);
+        } else {
+            getServer().getLogger().info("lib/jython-standalone-2.7.1.jar found!");
+        }
+    }
+
     public void onEnable() {
         this.getServer().getPluginManager().registerInterface(PyPluginLoader.class);
         List<String> loaders = new ArrayList<>();

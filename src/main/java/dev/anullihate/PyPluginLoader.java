@@ -105,10 +105,7 @@ public class PyPluginLoader implements PluginLoader {
 
     public Pattern[] getPluginFilters() {
         return new Pattern[] {
-                Pattern.compile("^(.*)\\.py\\.dir$"),
-                Pattern.compile("^(.*)_py_dir$"),
-                Pattern.compile("^(.*)\\.py\\.zip$"),
-                Pattern.compile("^(.*)\\.pyp$"),
+                Pattern.compile("^(.*)_py$")
         };
     }
 

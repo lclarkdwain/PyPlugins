@@ -3,10 +3,7 @@ package dev.anullihate;
 import cn.nukkit.Server;
 import cn.nukkit.event.plugin.PluginDisableEvent;
 import cn.nukkit.event.plugin.PluginEnableEvent;
-import cn.nukkit.plugin.Plugin;
-import cn.nukkit.plugin.PluginBase;
-import cn.nukkit.plugin.PluginDescription;
-import cn.nukkit.plugin.PluginLoader;
+import cn.nukkit.plugin.*;
 import cn.nukkit.utils.Utils;
 import org.python.core.*;
 import org.python.util.PythonInterpreter;
@@ -14,9 +11,7 @@ import org.python.util.PythonInterpreter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class PyPluginLoader implements PluginLoader {
@@ -138,7 +133,7 @@ public class PyPluginLoader implements PluginLoader {
                 pythonPlugin.setEnabled(true);
             } catch (Throwable e) {
                 server.getLogger().critical("Error occurred while enabling " + plugin.getDescription().getFullName()
-                        + " (Is it up to date?): " + e.getMessage());
+                        + " There must be something wrong in your onEnable() in your python plugin");
             }
 
             server.getPluginManager().callEvent(new PluginEnableEvent(plugin));
@@ -157,12 +152,10 @@ public class PyPluginLoader implements PluginLoader {
                 pythonPlugin.setEnabled(false);
             } catch (Throwable e) {
                 server.getLogger().critical("Error occurred while disabling " + plugin.getDescription().getFullName()
-                                + " (Is it up to date?): " + e.getMessage());
+                                + " There must be something wrong in your onEnable() in your python plugin");
             }
 
             server.getPluginManager().callEvent(new PluginDisableEvent(plugin));
-
-            String pluginName = pythonPlugin.getDescription().getName();
         }
     }
 }

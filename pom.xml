@@ -6,7 +6,7 @@
 
     <groupId>dev.anullihate</groupId>
     <artifactId>PyPlugins</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
 
     <build>
         <defaultGoal>install</defaultGoal>
@@ -51,7 +51,7 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Class-Path>../lib/jython-standalone-2.7.1.jar</Class-Path>
+                            <Class-Path>../lib/jython-standalone.jar</Class-Path>
                         </manifestEntries>
                     </archive>
                 </configuration>

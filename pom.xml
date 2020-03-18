@@ -11,16 +11,16 @@
     <build>
         <defaultGoal>install</defaultGoal>
         <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
-        <resources>
-            <resource>
-                <targetPath>.</targetPath>
-                <filtering>true</filtering>
-                <directory>${basedir}/src/main/resources</directory>
-                <includes>
-                    <include>plugin.yml</include>
-                </includes>
-            </resource>
-        </resources>
+        <!--<resources>-->
+            <!--<resource>-->
+                <!--<targetPath>.</targetPath>-->
+                <!--<filtering>true</filtering>-->
+                <!--<directory>${basedir}/src/main/resources</directory>-->
+                <!--<includes>-->
+                    <!--<include>plugin.yml</include>-->
+                <!--</includes>-->
+            <!--</resource>-->
+        <!--</resources>-->
         <!--<plugins>-->
             <!--<plugin>-->
                 <!--<groupId>org.apache.maven.plugins</groupId>-->
@@ -77,6 +77,11 @@
             <groupId>org.python</groupId>
             <artifactId>jython-standalone</artifactId>
             <version>2.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>net.wstech2</groupId>
+            <artifactId>jython-annotation-tools</artifactId>
+            <version>0.9.0</version>
         </dependency>
     </dependencies>
     <properties>

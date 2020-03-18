@@ -53,6 +53,17 @@ public class PyPluginLoader implements PluginLoader {
                     PyDictionary table = new PyDictionary();
                     PythonInterpreter interpreter = new PythonInterpreter(table, state);
 
+                    // exec scripts
+                    String[] pre_scripts = {"preload.py"};
+
+                    for (String script : pre_scripts) {
+                        InputStream metastream = this.getClass().getClassLoader().getResourceAsStream("scripts/"+script);
+                        if (metastream != null) {
+                            interpreter.execfile(metastream);
+                            metastream.close();
+                        }
+                    }
+
                     interpreter.execfile(instream);
                     instream.close();
 
